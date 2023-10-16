@@ -8,4 +8,5 @@ urlpatterns = [
     path('draw.html',drawpage),
     path('win.html',winpage),
     path('lose.html',losepage),
+    path('lady.html',frontpage),
 ]
