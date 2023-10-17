@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from jan_ken_app.views import frontpage
 from jan_ken_app.views import drawpage , winpage , losepage
 
@@ -8,4 +8,5 @@ urlpatterns = [
     path('win.html',winpage),
     path('lose.html',losepage),
     path('lady.html',frontpage),
+    path('accounts/',include("accounts.urls"))
 ]
