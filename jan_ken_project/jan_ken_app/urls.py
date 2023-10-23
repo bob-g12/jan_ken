@@ -10,5 +10,5 @@ urlpatterns = [
     path('lose.html',judgpage),
     path('lady.html',frontpage),
     path('accounts/',include("accounts.urls")),
-    path('formpage', views.FormView.as_view(),name="formpage"),
+    #path('', views.AccountRegistration.as_view(), name='register'),
 ]
