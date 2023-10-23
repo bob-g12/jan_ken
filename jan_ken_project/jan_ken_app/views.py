@@ -62,7 +62,7 @@ class FormView(TemplateView):
 
     # GET時の処理を記載
     def get(self,request):
-        return render(request, "App_Folder_HTML/formpage.html",context=self.params)
+        return render(request, "formpage.html",context=self.params)
 
     # POST時の処理を記載
     def post(self,request):
@@ -73,4 +73,4 @@ class FormView(TemplateView):
             if self.params["form"].is_valid():
                 self.params["Message"] = "入力情報が送信されました。"
 
-        return render(request, "App_Folder_HTML/formpage.html",context=self.params)
+        return render(request, "formpage.html",context=self.params)
