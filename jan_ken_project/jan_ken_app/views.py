@@ -51,7 +51,7 @@ def judgpage(request):
         "point" : not_point
     }
     return render(request,judgment[random_count],context)
-
+#入力フォーム
 class FormView(TemplateView):
 
     # 初期変数定義
