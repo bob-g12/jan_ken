@@ -8,7 +8,11 @@ urlpatterns = [
     path('draw.html',judgpage),
     path('win.html',judgpage),
     path('lose.html',judgpage),
-    path('lady.html',frontpage),
+    path('lady.html',frontpage,name="frontpage"),
+    #アカウント管理のパス
     path('accounts/',include("accounts.urls")),
-    path('', views.AccountRegistration.as_view(), name='register'),
+    path('',views.Login,name='Login'),
+    path("logout",views.Logout,name="Logout"),
+    path('register',views.AccountRegistration.as_view(), name='register'),
+    path("home",views.home,name="home"),
 ]
