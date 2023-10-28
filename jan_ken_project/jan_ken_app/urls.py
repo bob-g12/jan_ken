@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from jan_ken_app.views import frontpage
 from jan_ken_app.views import judgpage
 from . import views
@@ -10,7 +10,6 @@ urlpatterns = [
     path('lose.html',judgpage),
     path('lady.html',frontpage,name="frontpage"),
     #アカウント管理のパス
-    path('accounts/',include("accounts.urls")),
     path('',views.Login,name='Login'),
     path("logout",views.Logout,name="Logout"),
     path('register',views.AccountRegistration.as_view(), name='register'),
