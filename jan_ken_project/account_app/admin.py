@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-# モデルをインポート
+# 同じディレクトリにあるmodels.pyからクラスのAccountをインポート
 from .models import Account
 
-# 管理ツールに登録
+# 管理ページに登録
 admin.site.register(Account)
