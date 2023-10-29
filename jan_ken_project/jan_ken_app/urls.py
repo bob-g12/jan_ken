@@ -1,3 +1,4 @@
+"""
 from django.urls import path
 from jan_ken_app.views import frontpage
 from jan_ken_app.views import judgpage
@@ -10,3 +11,4 @@ urlpatterns = [
     path('win.html',judgpage),
     path('lose.html',judgpage),
 ]
+"""
