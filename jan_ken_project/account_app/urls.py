@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path , include
 from . import views
 from jan_ken_app.views import frontpage
 urlpatterns = [
@@ -7,5 +7,5 @@ urlpatterns = [
     path("logout",views.Logout,name="Logout"),
     path('register',views.AccountRegistration.as_view(), name='register'),
     path("home",views.home,name="home"),
-    path('lady.html',frontpage,name="frontpage"),
+    path('ready.html',include('jan_ken_app.urls')),
 ]

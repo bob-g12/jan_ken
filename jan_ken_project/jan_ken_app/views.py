@@ -28,7 +28,7 @@ def frontpage(request):
     context = {
         "count": counted
     }
-    return render(request,"jan_ken/lady.html",context)
+    return render(request,"jan_ken/ready.html",context)
 
 #ランダムな結果を表示させる関数
 def judgpage(request):
