@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView # テンプレートタグ
-from .forms import AccountForm, AddAccountForm # ユーザーアカウントフォーム
+from .forms import AccountForm #AddAccountForm # ユーザーアカウントフォーム
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
@@ -57,20 +57,20 @@ class  AccountRegistration(TemplateView):
         self.params = {
         "AccountCreate":False,
         "account_form": AccountForm(),
-        "add_account_form":AddAccountForm(),
+        #"add_account_form":AddAccountForm(),
         }
 
     #Get処理
     def get(self,request):
         self.params["account_form"] = AccountForm()
-        self.params["add_account_form"] = AddAccountForm()
+        #self.params["add_account_form"] = AddAccountForm()
         self.params["AccountCreate"] = False
         return render(request,"register.html",context=self.params)
 
     #Post処理
     def post(self,request):
         self.params["account_form"] = AccountForm(data=request.POST)
-        self.params["add_account_form"] = AddAccountForm(data=request.POST)
+        #self.params["add_account_form"] = AddAccountForm(data=request.POST)
 
         #フォーム入力の有効検証
         if self.params["account_form"].is_valid() and self.params["add_account_form"].is_valid():
@@ -88,8 +88,8 @@ class  AccountRegistration(TemplateView):
             add_account.user = account
 
             # 画像アップロード有無検証
-            if 'account_image' in request.FILES:
-                add_account.account_image = request.FILES['account_image']
+            #if 'account_image' in request.FILES:
+                #add_account.account_image = request.FILES['account_image']
 
             # モデル保存
             add_account.save()
@@ -109,20 +109,20 @@ class  AccountRegistration(TemplateView):
         self.params = {
         "AccountCreate":False,
         "account_form": AccountForm(),
-        "add_account_form":AddAccountForm(),
+        #"add_account_form":AddAccountForm(),
         }
 
     # Get処理
     def get(self,request):
         self.params["account_form"] = AccountForm()
-        self.params["add_account_form"] = AddAccountForm()
+        #self.params["add_account_form"] = AddAccountForm()
         self.params["AccountCreate"] = False
         return render(request,"register.html",context=self.params)
 
     # Post処理
     def post(self,request):
         self.params["account_form"] = AccountForm(data=request.POST)
-        self.params["add_account_form"] = AddAccountForm(data=request.POST)
+        #self.params["add_account_form"] = AddAccountForm(data=request.POST)
 
         # フォーム入力の有効検証
         if self.params["account_form"].is_valid() and self.params["add_account_form"].is_valid():
@@ -140,8 +140,8 @@ class  AccountRegistration(TemplateView):
             add_account.user = account
 
             # 画像アップロード有無検証
-            if 'account_image' in request.FILES:
-                add_account.account_image = request.FILES['account_image']
+            #if 'account_image' in request.FILES:
+                #add_account.account_image = request.FILES['account_image']
 
             # モデル保存
             add_account.save()
