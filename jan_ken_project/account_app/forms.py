@@ -22,6 +22,6 @@ class AddAccountForm(forms.ModelForm):
         fields = ('last_name','first_name',)#'account_image',「写真の項目追加」
         labels = {'last_name':"苗字",'first_name':"名前",}#'account_image':"写真アップロード",「写真の項目追加」
         
-#AddAccountFormのコメントアウトをすべて外すと苗字、名前を追加
+#AddAccountFormとadd_account_formのコメントアウトをすべて外すと苗字、名前を追加
 #class Metaのコメントを戻すとメールの項目追加
 #class AddAccountFormのコメントを戻すと写真の項目追加
